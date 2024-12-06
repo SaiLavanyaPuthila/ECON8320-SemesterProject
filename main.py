@@ -1,5 +1,5 @@
 import os
-
+import json
 from fetch_data import fetch_data_from_api, flatten_json_to_csv
 
 
