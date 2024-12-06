@@ -33,10 +33,16 @@ jobs:
       run: |
         python main.py
 
-    - name: Upload files to the repo
+    - name: Commit the CSV files to the repo
       run: |
         git config --global user.email "sputhila@unomaha.edu"
         git config --global user.name "SaiLavanyaPuthila"
         git add .
         git commit -m "Updated CSV files"
         git push origin HEAD:master
+      
+    - name : Upload the CSV files to the repo
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        force: true
