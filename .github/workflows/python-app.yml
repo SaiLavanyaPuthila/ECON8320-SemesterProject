@@ -5,7 +5,7 @@ name: Python application
 
 on:
   schedule:
-    - cron: '15 17 * * *'
+    - cron: '25 17 * * *'
 
 permissions:
   contents: read
@@ -35,7 +35,13 @@ jobs:
       run: |
         python main.py
 
-    - name: Commit the CSV files to the repo
+
+    - name: Check for modified files
+      id: git-check
+      run: echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
+
+    - name: Commit the CSV files to the repo if any changes are there
+      if: steps.git-check.outputs.modified == 'true'
       run: |
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions[bot]"
