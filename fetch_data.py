@@ -69,7 +69,8 @@ def flatten_json_to_csv(json_data):
             df_existing = pd.read_csv(file_path)
             combined_df = pd.concat([df_existing,df_new],ignore_index=True)
             combined_df.drop_duplicates(subset=['year','period'],keep='last',inplace=True)
-            combined_df.sort_values(by=['year','period'],inplace=True)
+            print(combined_df)
+            # combined_df.sort_values(by=['year','period'],inplace=True)
             combined_df.to_csv(file_path,index=False)
         except:
             df_new.to_csv(file_path,index=False)
