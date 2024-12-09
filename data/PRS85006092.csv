@@ -1,4 +1,23 @@
 year,period,periodName,latest,value,footnotes,series_id
+2024,Q03,3rd Quarter,True,2.2,[{}],PRS85006092
+2024,Q02,2nd Quarter,,2.1,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2024,Q01,1st Quarter,,0.7,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2023,Q04,4th Quarter,,3.1,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2023,Q03,3rd Quarter,,3.8,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2023,Q02,2nd Quarter,,3.7,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2023,Q01,1st Quarter,,0.3,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2022,Q04,4th Quarter,,2.9,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2022,Q03,3rd Quarter,,-0.2,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2022,Q02,2nd Quarter,,-3.0,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2022,Q01,1st Quarter,,-5.0,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2021,Q04,4th Quarter,,2.8,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2021,Q03,3rd Quarter,,-2.5,[{}],PRS85006092
+2021,Q02,2nd Quarter,,0.2,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2021,Q01,1st Quarter,,3.2,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2020,Q04,4th Quarter,,-3.1,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2020,Q03,3rd Quarter,,6.2,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2020,Q02,2nd Quarter,,20.2,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
+2020,Q01,1st Quarter,,-1.1,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
 2024,Q03,3rd Quarter,true,2.2,[{}],PRS85006092
 2024,Q02,2nd Quarter,,2.1,"[{'code': 'R', 'text': 'revised'}]",PRS85006092
 2024,Q01,1st Quarter,,0.7,"[{'code': 'R', 'text': 'revised'}]",PRS85006092

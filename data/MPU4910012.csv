@@ -1,4 +1,8 @@
 year,period,periodName,latest,value,footnotes,series_id
+2023,A01,Annual,True,105.366,[{}],MPU4910012
+2022,A01,Annual,,104.078,[{}],MPU4910012
+2021,A01,Annual,,105.253,[{}],MPU4910012
+2020,A01,Annual,,101.397,[{}],MPU4910012
 2023,A01,Annual,true,105.366,[{}],MPU4910012
 2022,A01,Annual,,104.078,[{}],MPU4910012
 2021,A01,Annual,,105.253,[{}],MPU4910012

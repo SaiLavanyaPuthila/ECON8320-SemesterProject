@@ -1,4 +1,62 @@
 year,period,periodName,latest,value,footnotes,series_id
+2024,M10,October,True,256.325,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD49207
+2024,M09,September,,257.536,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD49207
+2024,M08,August,,259.63,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD49207
+2024,M07,July,,259.809,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD49207
+2024,M06,June,,258.556,[{}],WPUFD49207
+2024,M05,May,,258.508,[{}],WPUFD49207
+2024,M04,April,,260.028,[{}],WPUFD49207
+2024,M03,March,,258.58,[{}],WPUFD49207
+2024,M02,February,,256.565,[{}],WPUFD49207
+2024,M01,January,,252.386,[{}],WPUFD49207
+2023,M12,December,,250.17,[{}],WPUFD49207
+2023,M11,November,,252.581,[{}],WPUFD49207
+2023,M10,October,,254.465,[{}],WPUFD49207
+2023,M09,September,,259.348,[{}],WPUFD49207
+2023,M08,August,,258.968,[{}],WPUFD49207
+2023,M07,July,,255.145,[{}],WPUFD49207
+2023,M06,June,,254.316,[{}],WPUFD49207
+2023,M05,May,,252.855,[{}],WPUFD49207
+2023,M04,April,,255.14,[{}],WPUFD49207
+2023,M03,March,,253.942,[{}],WPUFD49207
+2023,M02,February,,253.956,[{}],WPUFD49207
+2023,M01,January,,254.522,[{}],WPUFD49207
+2022,M12,December,,249.919,[{}],WPUFD49207
+2022,M11,November,,255.268,[{}],WPUFD49207
+2022,M10,October,,255.481,[{}],WPUFD49207
+2022,M09,September,,253.501,[{}],WPUFD49207
+2022,M08,August,,253.744,[{}],WPUFD49207
+2022,M07,July,,257.709,[{}],WPUFD49207
+2022,M06,June,,262.394,[{}],WPUFD49207
+2022,M05,May,,255.183,[{}],WPUFD49207
+2022,M04,April,,248.781,[{}],WPUFD49207
+2022,M03,March,,246.495,[{}],WPUFD49207
+2022,M02,February,,238.956,[{}],WPUFD49207
+2022,M01,January,,233.941,[{}],WPUFD49207
+2021,M12,December,,229.449,[{}],WPUFD49207
+2021,M11,November,,230.962,[{}],WPUFD49207
+2021,M10,October,,229.686,[{}],WPUFD49207
+2021,M09,September,,227.24,[{}],WPUFD49207
+2021,M08,August,,224.95,[{}],WPUFD49207
+2021,M07,July,,223.455,[{}],WPUFD49207
+2021,M06,June,,221.8,[{}],WPUFD49207
+2021,M05,May,,218.4,[{}],WPUFD49207
+2021,M04,April,,215.1,[{}],WPUFD49207
+2021,M03,March,,213.8,[{}],WPUFD49207
+2021,M02,February,,210.1,[{}],WPUFD49207
+2021,M01,January,,207.6,[{}],WPUFD49207
+2020,M12,December,,204.4,[{}],WPUFD49207
+2020,M11,November,,203.8,[{}],WPUFD49207
+2020,M10,October,,203.8,[{}],WPUFD49207
+2020,M09,September,,203.3,[{}],WPUFD49207
+2020,M08,August,,203.2,[{}],WPUFD49207
+2020,M07,July,,203.3,[{}],WPUFD49207
+2020,M06,June,,202.2,[{}],WPUFD49207
+2020,M05,May,,200.9,[{}],WPUFD49207
+2020,M04,April,,196.1,[{}],WPUFD49207
+2020,M03,March,,201.8,[{}],WPUFD49207
+2020,M02,February,,205.0,[{}],WPUFD49207
+2020,M01,January,,206.8,[{}],WPUFD49207
 2024,M10,October,true,256.325,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD49207
 2024,M09,September,,257.536,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD49207
 2024,M08,August,,259.630,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD49207
