@@ -57,10 +57,11 @@ year,period,periodName,latest,value,footnotes,series_id
 2020,M03,March,,118.1,[{}],WPUFD4
 2020,M02,February,,118.4,[{}],WPUFD4
 2020,M01,January,,119.0,[{}],WPUFD4
-2024,M10,October,true,145.672,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD4
-2024,M09,September,,145.282,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD4
-2024,M08,August,,145.504,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD4
-2024,M07,July,,145.288,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD4
+2024,M11,November,true,146.093,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD4
+2024,M10,October,,145.997,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD4
+2024,M09,September,,145.523,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD4
+2024,M08,August,,145.566,"[{'code': 'P', 'text': 'Preliminary. All indexes are subject to monthly revisions up to four months after original publication.'}]",WPUFD4
+2024,M07,July,,145.264,[{}],WPUFD4
 2024,M06,June,,145.321,[{}],WPUFD4
 2024,M05,May,,144.504,[{}],WPUFD4
 2024,M04,April,,144.563,[{}],WPUFD4

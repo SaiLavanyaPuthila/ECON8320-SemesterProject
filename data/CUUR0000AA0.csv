@@ -57,7 +57,8 @@ year,period,periodName,latest,value,footnotes,series_id
 2020,M03,March,,773.199,[{}],CUUR0000AA0
 2020,M02,February,,774.886,[{}],CUUR0000AA0
 2020,M01,January,,772.768,[{}],CUUR0000AA0
-2024,M10,October,true,945.589,[{}],CUUR0000AA0
+2024,M11,November,true,945.076,[{}],CUUR0000AA0
+2024,M10,October,,945.589,[{}],CUUR0000AA0
 2024,M09,September,,944.502,[{}],CUUR0000AA0
 2024,M08,August,,942.988,[{}],CUUR0000AA0
 2024,M07,July,,942.221,[{}],CUUR0000AA0
