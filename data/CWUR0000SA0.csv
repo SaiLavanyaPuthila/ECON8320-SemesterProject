@@ -1,5 +1,6 @@
 year,period,periodName,latest,value,footnotes,series_id
-2024,M10,October,True,309.358,[{}],CWUR0000SA0
+2024,M11,November,True,308.998,[{}],CWUR0000SA0
+2024,M10,October,,309.358,[{}],CWUR0000SA0
 2024,M09,September,,309.046,[{}],CWUR0000SA0
 2024,M08,August,,308.64,[{}],CWUR0000SA0
 2024,M07,July,,308.501,[{}],CWUR0000SA0

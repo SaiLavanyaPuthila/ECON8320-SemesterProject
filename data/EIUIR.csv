@@ -57,10 +57,11 @@ year,period,periodName,latest,value,footnotes,series_id
 2020,M03,March,,121.3,[{}],EIUIR
 2020,M02,February,,124.3,[{}],EIUIR
 2020,M01,January,,125.2,[{}],EIUIR
-2024,M10,October,true,141.2,[{}],EIUIR
-2024,M09,September,,140.8,[{}],EIUIR
+2024,M11,November,true,141.2,[{}],EIUIR
+2024,M10,October,,141.0,"[{'code': 'R', 'text': 'Revised.'}]",EIUIR
+2024,M09,September,,140.9,"[{'code': 'R', 'text': 'Revised.'}]",EIUIR
 2024,M08,August,,141.4,[{}],EIUIR
-2024,M07,July,,141.8,"[{'code': 'R', 'text': 'Revised.'}]",EIUIR
+2024,M07,July,,141.8,[{}],EIUIR
 2024,M06,June,,141.6,[{}],EIUIR
 2024,M05,May,,141.5,[{}],EIUIR
 2024,M04,April,,141.7,[{}],EIUIR
