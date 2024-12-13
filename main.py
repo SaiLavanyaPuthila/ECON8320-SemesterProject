@@ -6,7 +6,7 @@ from fetch_data import fetch_data_from_api, flatten_json_to_csv
 def main():
     BASE_URL = "https://api.bls.gov/publicAPI/v2/timeseries/data/"
     API_KEY = "13bcdc9f4f604f0bacdd80ed16f2386f"
-    start_year = 2020
+    start_year = 2012
     end_year = 2024
     # series_list = ["CES0000000001"]
     
