@@ -1,0 +1,32 @@
+import pandas as pd
+
+def load_dataframes():
+    df_lns11000000 = pd.read_csv("data/LNS11000000.csv")
+    df_lns12000000 = 
+    df_lns13000000 = pd.read_csv("data/LNS13000000.csv")
+    df_lns14000000 = pd.read_csv("data/LNS14000000.csv")
+    df_ces0000000001 = pd.read_csv("data/CES0000000001.csv")
+    df_ces0500000002 = pd.read_csv("data/CES0500000002.csv")
+    df_ces0500000007 = pd.read_csv("data/CES0500000007.csv")
+    df_ces0500000003 = pd.read_csv("data/CES0500000003.csv")
+    df_ces0500000008 = pd.read_csv("data/CES0500000008.csv")
+    df_prs85006092 = pd.read_csv("data/PRS85006092.csv")
+    df_prs85006112 = pd.read_csv("data/PRS85006112.csv")
+    df_prs85006152 = pd.read_csv("data/PRS85006152.csv")
+    df_mpu4910012 = pd.read_csv("data/MPU4910012.csv")
+    df_cuur0000sa0 = pd.read_csv("data/CUUR0000SA0.csv")
+    df_cuur0000aa0 = pd.read_csv("data/CUUR0000AA0.csv")
+    df_cwur0000sa0 = pd.read_csv("data/CWUR0000SA0.csv")
+    df_cuur0000sa0l1e = pd.read_csv("data/CUUR0000SA0L1E.csv")
+    df_cwur0000sa0l1e = pd.read_csv("data/CWUR0000SA0L1E.csv")
+    df_wpsfd4 = pd.read_csv("data/WPSFD4.csv")
+    df_wpufd4 = pd.read_csv("data/WPUFD4.csv")
+    df_wpufd49104 = pd.read_csv("data/WPUFD49104.csv")
+    df_wpufd49116 = pd.read_csv("data/WPUFD49116.csv")
+    df_wpufd49207 = pd.read_csv("data/WPUFD49207.csv")
+    df_eiuir = pd.read_csv("data/EIUIR.csv")
+    df_eiuiq = pd.read_csv("data/EIUIQ.csv")
+    df_ciu1010000000000a = pd.read_csv("data/CIU1010000000000A.csv")
+    df_ciu2010000000000a = pd.read_csv("data/CIU2010000000000A.csv")
+    df_ciu2020000000000a = pd.read_csv("data/CIU2020000000000A.csv")
+    return df
