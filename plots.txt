@@ -1,28 +1,39 @@
-df_LNS11000000
-df_LNS12000000
-df_LNS13000000
-df_LNS14000000
-df_CES0000000001
-df_CES0500000002
-df_CES0500000007
-df_CES0500000003
-df_CES0500000008
-df_PRS85006092
-df_PRS85006112
-df_PRS85006152
-df_MPU4910012
-df_CUUR0000SA0
-df_CUUR0000AA0
-df_CWUR0000SA0
-df_CUUR0000SA0L1E
-df_CWUR0000SA0L1E
-df_WPSFD4
-df_WPUFD4
-df_WPUFD49104
-df_WPUFD49116
-df_WPUFD49207
-df_EIUIR
-df_EIUIQ
-df_CIU1010000000000A
-df_CIU2010000000000A
-df_CIU2020000000000A
+LNS14000000
+CES0000000001
+
+Line chat with 2 time series.Dual axis line chart
+==================================================================
+
+LNS13000000
+LNS12000000
+
+Line chart single axis
+==================================================================
+
+stacked bar chart 
+
+Civilian Unemployment - LNS13000000
+Total Nonfarm Employment - CES0000000001
+Total Private Average Hourly Earnings of All Employees - CES0500000003
+
+===================================================================
+Cost of Living and Consumer Economics
+
+CES0500000003
+CUUR0000SA0
+
+===================================================================
+
+Heatmap
+
+Civilian Labor Force (Seasonally Adjusted) - LNS11000000
+Unemployment Rate (Seasonally Adjusted) - LNS14000000
+Total Private Average Hourly Earnings of All Employees - Seasonally Adjusted - CES0500000003
+
+===================================================================
+
+Sectoral Trends in Employment and Earnings
+
+
+
+

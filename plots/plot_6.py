@@ -40,7 +40,7 @@ def plot_6():
     )
 
     # Sidebar for year selection
-    st.sidebar.header("Filter Data")
+    st.sidebar.header("Filter data based on year for plot 4")
     selected_year = st.sidebar.slider(
         "Select Year",
         min_value=int(min_year),
@@ -58,7 +58,6 @@ def plot_6():
     st.write(
         "Compare Average Weekly Hours and Hourly Earnings across sectors to visualize sector-specific trends."
     )
-    st.write("Highlights disparities in work hours and wages between industries.")
 
     # Merging dataframes for bar chart
     merged_df_bar = pd.merge(

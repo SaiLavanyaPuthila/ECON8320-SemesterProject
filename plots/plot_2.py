@@ -59,7 +59,7 @@ def plot_2():
         df_ces["year"].max(), df_lns_unemp["year"].max(), df_lns_civ_emp["year"].max()
     )
 
-    st.sidebar.header("Filter data based on year for plot 2,3,4")
+    st.sidebar.header("Filter data based on year for plot 1")
     selected_year = st.sidebar.slider(
         "Select Year",
         min_value=int(min_year),
@@ -75,10 +75,10 @@ def plot_2():
 
     # ------------------------------- Dual-Axis Line Chart -----------------------------------
     st.title("Recession and Economic Slowdown")
-    st.write(
-        "Plot Unemployment Rate and Total Nonfarm Employment on a dual-axis line chart to identify correlations during economic downturns."
-    )
-    st.write("Shows how job losses impact unemployment rates during recessions.")
+    # st.write(
+    #     "Plot Unemployment Rate and Total Nonfarm Employment on a dual-axis line chart to identify correlations during economic downturns."
+    # )
+    # st.write("Shows how job losses impact unemployment rates during recessions.")
 
     merged_df_dual = pd.merge(
         filtered_df_ces[["year_period", "value"]],
@@ -126,113 +126,6 @@ def plot_2():
     fig_dual.update_yaxes(title_text="<b>Unemployment Rate</b>", secondary_y=True)
 
     st.plotly_chart(fig_dual, use_container_width=True, key=201)
-
-    # ------------------------------------ Heatmap --------------------------------------
-    st.header("Heatmap of Monthly Changes")
-    st.write(
-        "Create a heatmap showing monthly changes in Unemployment Rate and Total Nonfarm Employment across time."
-    )
-    st.write(
-        "Visualizes which industries were hit hardest during recessions, identifying patterns of recovery or prolonged decline."
-    )
-
-    df_ces_change = calculate_monthly_change(filtered_df_ces)
-    df_lns_unemp_change = calculate_monthly_change(filtered_df_lns_unemp)
-
-    merged_df_heatmap = pd.merge(
-        df_ces_change[["year", "month", "change"]],
-        df_lns_unemp_change[["year", "month", "change"]],
-        on=["year", "month"],
-        suffixes=("_ces", "_unemp"),
-    )
-
-    merged_df_heatmap = merged_df_heatmap.rename(
-        columns={
-            "change_ces": "Nonfarm Emp Change",
-            "change_unemp": "Unemp Rate Change",
-        }
-    )
-
-    pivot_df = merged_df_heatmap.pivot_table(
-        index="year",
-        columns="month",
-        values=["Nonfarm Emp Change", "Unemp Rate Change"],
-    )
-
-    # Create Heatmap using Plotly
-    fig_heatmap = make_subplots(
-        rows=2,
-        cols=1,
-        subplot_titles=("Nonfarm Emp Change Heatmap", "Unemp Rate Change Heatmap"),
-        vertical_spacing=0.15,
-    )
-
-    fig_heatmap.add_trace(
-        go.Heatmap(
-            z=pivot_df["Nonfarm Emp Change"].values,
-            x=pivot_df["Nonfarm Emp Change"].columns.values,
-            y=pivot_df["Nonfarm Emp Change"].index.values,
-            colorscale="RdBu",
-            showscale=True,
-        ),
-        row=1,
-        col=1,
-    )
-    fig_heatmap.add_trace(
-        go.Heatmap(
-            z=pivot_df["Unemp Rate Change"].values,
-            x=pivot_df["Unemp Rate Change"].columns.values,
-            y=pivot_df["Unemp Rate Change"].index.values,
-            colorscale="RdBu",
-            showscale=True,
-        ),
-        row=2,
-        col=1,
-    )
-
-    fig_heatmap.update_layout(height=700)
-    st.plotly_chart(fig_heatmap, use_container_width=True)
-
-    # ---------------------------------- Box Plot -------------------------------------
-    st.header("Box Plot of Unemployment Rates")
-    st.write(
-        "Use a box plot to represent the distribution of unemployment rates before, during, and after recessions."
-    )
-    st.write(
-        "Highlights variability in unemployment and how recessions exacerbate disparities in labor market conditions."
-    )
-
-    filtered_df_lns_unemp["recession_period"] = filtered_df_lns_unemp["year"].apply(
-        categorize_period
-    )
-
-    # remove 'other' periods
-    filtered_df_lns_unemp = filtered_df_lns_unemp[
-        filtered_df_lns_unemp["recession_period"] != "Other"
-    ]
-
-    # Create Box Plot
-    fig_box = go.Figure()
-
-    for period in filtered_df_lns_unemp["recession_period"].unique():
-        fig_box.add_trace(
-            go.Box(
-                y=filtered_df_lns_unemp[
-                    filtered_df_lns_unemp["recession_period"] == period
-                ]["value"],
-                name=period,
-            )
-        )
-
-    fig_box.update_layout(
-        title="<b>Distribution of Unemployment Rates During Economic Cycles</b>",
-        xaxis_title="Recession Period",
-        yaxis_title="Unemployment Rate",
-        showlegend=False,
-    )
-
-    st.plotly_chart(fig_box, use_container_width=True)
-
 
 if __name__ == "__main__":
     plot_2()

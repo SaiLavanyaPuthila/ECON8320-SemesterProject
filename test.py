@@ -15,7 +15,7 @@ def filter_df(df, selected_year):
     return df[(df["year"] >= selected_year[0]) & (df["year"] <= selected_year[1])]
 
 
-def plot_5():
+def plot_stacked_bar_chart():
     # Load the datasets
     df_unemployment = pd.read_csv("data/LNS13000000.csv")
     df_nonfarm = pd.read_csv("data/CES0000000001.csv")
@@ -39,7 +39,7 @@ def plot_5():
     )
 
     # Sidebar for year selection
-    st.sidebar.header("Filter data based on year for plot 3")
+    st.sidebar.header("Filter Data by Year")
     selected_year = st.sidebar.slider(
         "Select Year",
         min_value=int(min_year),
@@ -94,7 +94,7 @@ def plot_5():
     st.plotly_chart(fig, use_container_width=True)
 
 
-if __name__ == "__main__":
-    plot_5()
+# if __name__ == "__main__":
+#     plot_stacked_bar_chart()
 
-# plot_stacked_bar_chart()
+plot_stacked_bar_chart()

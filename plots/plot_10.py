@@ -45,7 +45,7 @@ def plot_10():
     )
 
     # Sidebar for year selection
-    st.sidebar.header("Filter Data")
+    st.sidebar.header("Filter data based on year for plot 6")
     selected_year = st.sidebar.slider(
         "Select Year",
         min_value=int(min_year),
@@ -62,9 +62,6 @@ def plot_10():
     st.title("Cost of Living and Consumer Economics")
     st.write(
         "Break down the CPI-U into its major components over time. Add a secondary dataset for Hourly Earnings as a reference line."
-    )
-    st.write(
-        "Shows how different aspects of cost of living evolve and whether wage growth matches these changes."
     )
 
     # Assuming a generic CPI breakdown. You might need to adjust this based on the structure of your CPI data.

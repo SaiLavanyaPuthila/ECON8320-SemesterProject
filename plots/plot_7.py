@@ -20,87 +20,86 @@ def filter_df(df, selected_year):
 
 
 def plot_7():
+    # Load the datasets
+    df_earnings = pd.read_csv("data/CES0500000003.csv")
+    df_employment = pd.read_csv("data/LNS12000000.csv")
+    df_laborforce = pd.read_csv("data/LNS11000000.csv")
 
-    # Load datasets
-    df_imports = pd.read_csv("data/EIUIR.csv")  # Import Volumes
-    df_exports = pd.read_csv("data/EIUIQ.csv")  # Export Volumes
+    # Prepare the dataframes
+    df_earnings = prepare_df(df_earnings)
+    df_employment = prepare_df(df_employment)
+    df_laborforce = prepare_df(df_laborforce)
 
-    df_imports = prepare_df(df_imports)
-    df_exports = prepare_df(df_exports)
-
-    # Find the common year range
+    # Find common year range
     min_year = max(
-        df_imports["year"].min(),
-        df_exports["year"].min(),
+        df_earnings["year"].min(),
+        df_employment["year"].min(),
+        df_laborforce["year"].min(),
     )
     max_year = min(
-        df_imports["year"].max(),
-        df_exports["year"].max(),
+        df_earnings["year"].max(),
+        df_employment["year"].max(),
+        df_laborforce["year"].max(),
     )
 
-    # Sidebar for year selection
-    st.sidebar.header("Filter Data")
+     # Sidebar for year selection
+    st.sidebar.header("Filter data based on year for plot 5")
     selected_year = st.sidebar.slider(
-        "Select Year",
+        "Select Year Range",
         min_value=int(min_year),
         max_value=int(max_year),
         value=(int(min_year), int(max_year)),
         step=1,
-        key=14,
+        key=7,
     )
+    
+    filtered_df_earnings = filter_df(df_earnings, selected_year)
+    filtered_df_employment = filter_df(df_employment, selected_year)
+    filtered_df_laborforce = filter_df(df_laborforce, selected_year)
 
-    filtered_df_imports = filter_df(df_imports, selected_year)
-    filtered_df_exports = filter_df(df_exports, selected_year)
-
-    # ----------------------------------- Line Chart ------------------------------------
-    st.title("Trade and International Economics")
-    st.write(
-        "Compare Import and Export volumes over time to highlight changes in trade balances."
-    )
-    st.write("Identifies periods of trade surplus or deficit and their trends.")
-
-    # Merging dataframes for line chart
-    merged_df_line = pd.merge(
-        filtered_df_imports[["year_period", "value"]],
-        filtered_df_exports[["year_period", "value"]],
+    # Merge the dataframes
+    merged_df = pd.merge(
+        filtered_df_earnings[["year_period", "value"]],
+        filtered_df_employment[["year_period", "value"]],
         on="year_period",
-        suffixes=("_imports", "_exports"),
+        suffixes=("_earnings", "_employment"),
     )
-    merged_df_line = merged_df_line.rename(
+    merged_df = pd.merge(
+        merged_df,
+        filtered_df_laborforce[["year_period", "value"]],
+        on="year_period",
+    )
+    # Rename columns
+    merged_df = merged_df.rename(
         columns={
-            "value_imports": "Import Volumes",
-            "value_exports": "Export Volumes",
+            "value_earnings": "Average Hourly Earnings",
+            "value_employment": "Civilian Employment",
+            "value": "Civilian Labor Force",
         }
     )
-
-    # Create a line chart
-    fig_line = go.Figure()
-
-    fig_line.add_trace(
-        go.Scatter(
-            x=merged_df_line["year_period"],
-            y=merged_df_line["Import Volumes"],
-            name="Import Volumes",
-            mode="lines",
-        )
-    )
-    fig_line.add_trace(
-        go.Scatter(
-            x=merged_df_line["year_period"],
-            y=merged_df_line["Export Volumes"],
-            name="Export Volumes",
-            mode="lines",
-        )
+    # Stacked Area Chart
+    st.title("Wage Growth vs. Employment and Labor Force Participation")
+    st.write(
+        "This chart shows the trends in Average Hourly Earnings, Civilian Employment, and Civilian Labor Force over the selected time period."
     )
 
-    # Update layout
-    fig_line.update_layout(
-        title="<b>Import and Export Volumes Over Time</b>",
+    fig = px.area(
+        merged_df,
+        x="year_period",
+        y=[
+            "Average Hourly Earnings",
+            "Civilian Employment",
+            "Civilian Labor Force",
+        ],
+        title="Wage Growth vs. Employment and Labor Force Participation",
+        labels={"value": "Value"},
+    )
+    fig.update_layout(
         xaxis_title="Year Period",
-        yaxis_title="Volume",
+        yaxis_title="Value",
+        legend_title="Indicator",
     )
-
-    st.plotly_chart(fig_line, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
 
 
 if __name__ == "__main__":
