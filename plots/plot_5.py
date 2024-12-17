@@ -74,7 +74,7 @@ def plot_5():
     )
 
     # Create a stacked bar chart using Plotly
-    st.title("Economic Indicators: Stacked Bar Chart")
+    st.title("Labor Market Dynamics: Unemployment, Wage Growth, and Employment Trends Over Time")
     st.write(
         "Visualize trends in Civilian Unemployment, Total Nonfarm Employment, and Average Hourly Earnings over time."
     )
@@ -90,7 +90,15 @@ def plot_5():
         labels={"value": "Value", "year_period": "Year/Period"},
         title="Stacked Bar Chart of Economic Indicators",
     )
-
+    fig.update_yaxes(
+        title_text="<b>Employment Numbers</b>", secondary_y=False
+    )
+    fig.update_xaxes(
+        title_text="<b>Period</b>"
+    )
+    fig.update_layout(
+        legend_title="Indicator",
+    )
     st.plotly_chart(fig, use_container_width=True)
 
 

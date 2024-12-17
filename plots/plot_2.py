@@ -119,6 +119,7 @@ def plot_2():
     fig_dual.update_layout(
         title_text="<b>Total Nonfarm Employment vs Unemployment Rate</b>",
         xaxis_title="Year Period",
+        legend_title="Indicator",
     )
     fig_dual.update_xaxes(
         title_text="<b>Period</b>"

@@ -54,9 +54,9 @@ def plot_6():
     filtered_df_hourly_earnings = filter_df(df_hourly_earnings, selected_year)
 
     # ----------------------------------- Clustered Bar Chart ------------------------------------
-    st.title("Sectoral Trends in Employment and Earnings")
+    st.title("Analyzing Work Hours and Earnings Across Sectors:")
     st.write(
-        "Compare Average Weekly Hours and Hourly Earnings across sectors to visualize sector-specific trends."
+        "This chart compares Average Weekly Hours and Hourly Earnings across different sectors. It highlights the variations in work hours and wages, revealing disparities between industries."
     )
 
     # Merging dataframes for bar chart
@@ -97,8 +97,14 @@ def plot_6():
         title="<b>Sectoral Trends in Employment and Earnings</b>",
         xaxis_title="Year Period",
         yaxis_title="Values",
+        legend_title="Indicator",
     )
-
+    fig_bar.update_xaxes(
+        title_text="<b>Period</b>"
+    )
+    fig_bar.update_yaxes(
+        title_text="<b>Hours/Earnings</b>"
+    )
     st.plotly_chart(fig_bar, use_container_width=True)
 
 

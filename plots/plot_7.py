@@ -78,7 +78,7 @@ def plot_7():
         }
     )
     # Stacked Area Chart
-    st.title("Wage Growth vs. Employment and Labor Force Participation")
+    st.title("Wage Growth in Relation to Employment and Labor Force Participation")
     st.write(
         "This chart shows the trends in Average Hourly Earnings, Civilian Employment, and Civilian Labor Force over the selected time period."
     )
@@ -98,6 +98,12 @@ def plot_7():
         xaxis_title="Year Period",
         yaxis_title="Value",
         legend_title="Indicator",
+    )
+    fig.update_xaxes(
+        title_text="<b>Period</b>"
+    )
+    fig.update_yaxes(
+        title_text="<b>Value</b>"
     )
     st.plotly_chart(fig, use_container_width=True)
 

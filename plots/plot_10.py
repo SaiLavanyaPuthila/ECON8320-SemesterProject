@@ -59,9 +59,9 @@ def plot_10():
     filtered_df_earnings = filter_df(df_earnings, selected_year)
 
     # ----------------------------------- Stacked Bar Chart ------------------------------------
-    st.title("Cost of Living and Consumer Economics")
+    st.title("Cost of Living vs. Wage Growth: A Breakdown of Economic Trends")
     st.write(
-        "Break down the CPI-U into its major components over time. Add a secondary dataset for Hourly Earnings as a reference line."
+        "This chart analyzes the evolution of the Consumer Price Index for All Urban Consumers (CPI-U) across major categories like housing, transportation, food, and healthcare. It also compares these changes with hourly earnings as a reference. The insight helps to understand how cost of living adjustments relate to wage growth over time."
     )
 
     # Assuming a generic CPI breakdown. You might need to adjust this based on the structure of your CPI data.
@@ -106,9 +106,13 @@ def plot_10():
     fig_bar.update_layout(
         title="<b>CPI-U Components and Average Hourly Earnings</b>",
         xaxis_title="Year Period",
+        legend_title="Indicator",
     )
     fig_bar.update_yaxes(title_text="<b>CPI-U Components</b>", secondary_y=False)
     fig_bar.update_yaxes(title_text="<b>Average Hourly Earnings</b>", secondary_y=True)
+    fig_bar.update_xaxes(
+        title_text="<b>Period</b>"
+    )
 
     st.plotly_chart(fig_bar, use_container_width=True)
     

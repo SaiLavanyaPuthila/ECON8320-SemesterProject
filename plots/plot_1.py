@@ -87,7 +87,9 @@ def plot_1():
     fig.update_yaxes(
         title_text="<b>Employment Numbers</b>", secondary_y=False
     )
-
+    fig.update_layout(
+        legend_title="Indicator",
+    )
     st.plotly_chart(fig, use_container_width=True)
 
 
