@@ -1,5 +1,8 @@
 import streamlit as st
 import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
+
 
 
 def prepare_df(df):
@@ -15,7 +18,7 @@ def filter_df(df, selected_year):
 
 def plot_1():
     # Load the datasets
-    df_ces = pd.read_csv("data/LNS13000000.csv")
+    df_ces = pd.read_csv("data/LNS13000000.csv") 
     df_lns = pd.read_csv("data/LNS12000000.csv")
 
     # Sort and prepare each dataframe
@@ -42,9 +45,9 @@ def plot_1():
     filtered_df_lns = filter_df(df_lns, selected_year)
 
     # Line Chart
-    st.title("Total civilian employment vs civilian unemployment")
+    st.title("Civilian Employment vs. Civilian Unemployment: Tracking Workforce Dynamics:")
     st.write(
-        "Compare trends in Civilian Employment (LNS12000000) and Civilian Unemployment (LNS13000000) over time"
+        "This line chart tracks the trends in Civilian Employment and Civilian Unemployment over time, using seasonally adjusted data. It helps to visualize the relationship between workforce participation and unemployment, highlighting shifts in the labor market."
     )
 
     # Merge the two dataframes on year_period
@@ -63,13 +66,29 @@ def plot_1():
         }
     )
     # Display a line chart with both employment series
-    st.line_chart(
-        data=merged_df,
-        x="year_period",
-        y=["Civilian Unemployment", "Civilian Employment"],
-        use_container_width=True,
-        height=500,
+    # st.line_chart(
+    #     data=merged_df,
+    #     x="year_period",
+    #     y=["Civilian Unemployment", "Civilian Employment"],
+    #     use_container_width=True,
+    #     height=500,
+    # )
+    fig = px.line(
+    merged_df, 
+    x="year_period", 
+    y=["Civilian Unemployment", "Civilian Employment"],
+    
     )
+
+    fig.update_xaxes(
+        title_text="<b>Period</b>"
+    )
+    
+    fig.update_yaxes(
+        title_text="<b>Employment Numbers</b>", secondary_y=False
+    )
+
+    st.plotly_chart(fig, use_container_width=True)
 
 
 if __name__ == "__main__":

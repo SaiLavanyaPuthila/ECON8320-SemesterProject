@@ -74,10 +74,10 @@ def plot_2():
     filtered_df_lns_civ_emp = filter_df(df_lns_civ_emp, selected_year)
 
     # ------------------------------- Dual-Axis Line Chart -----------------------------------
-    st.title("Recession and Economic Slowdown")
-    # st.write(
-    #     "Plot Unemployment Rate and Total Nonfarm Employment on a dual-axis line chart to identify correlations during economic downturns."
-    # )
+    st.title("Employment Growth and Unemployment Trends: A Dual-Axis Analysis:")
+    st.write(
+        "This graph visualizes the relationship between Total Nonfarm Employment and the Unemployment Rate over time. It highlights how shifts in employment levels correlate with changes in the unemployment rate during economic cycles."
+    )
     # st.write("Shows how job losses impact unemployment rates during recessions.")
 
     merged_df_dual = pd.merge(
@@ -119,6 +119,9 @@ def plot_2():
     fig_dual.update_layout(
         title_text="<b>Total Nonfarm Employment vs Unemployment Rate</b>",
         xaxis_title="Year Period",
+    )
+    fig_dual.update_xaxes(
+        title_text="<b>Period</b>"
     )
     fig_dual.update_yaxes(
         title_text="<b>Total Nonfarm Employment</b>", secondary_y=False
