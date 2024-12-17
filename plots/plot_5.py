@@ -76,7 +76,7 @@ def plot_5():
     # Create a stacked bar chart using Plotly
     st.title("Labor Market Dynamics: Unemployment, Wage Growth, and Employment Trends Over Time")
     st.write(
-        "Visualize trends in Civilian Unemployment, Total Nonfarm Employment, and Average Hourly Earnings over time."
+        "This analysis explores key facets of the labor market – unemployment rates, wage growth patterns, and employment trends – over time. It provides a comprehensive view of the interconnectedness of these factors, revealing the dynamic shifts and pressures within the labor landscape and offering insights into the health and performance of the overall economy."
     )
 
     fig = px.bar(

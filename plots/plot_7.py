@@ -80,7 +80,7 @@ def plot_7():
     # Stacked Area Chart
     st.title("Wage Growth in Relation to Employment and Labor Force Participation")
     st.write(
-        "This chart shows the trends in Average Hourly Earnings, Civilian Employment, and Civilian Labor Force over the selected time period."
+        "This analysis investigates the interplay between wage growth, employment levels, and labor force participation. It examines how these factors influence each other, revealing the dynamics of compensation within the labor market and providing insights into the relationship between workforce engagement and earnings trends."
     )
 
     fig = px.area(
