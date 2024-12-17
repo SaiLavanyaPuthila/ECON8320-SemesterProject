@@ -78,7 +78,6 @@ def plot_2():
     st.write(
         "This graph visualizes the relationship between Total Nonfarm Employment and the Unemployment Rate over time. It highlights how shifts in employment levels correlate with changes in the unemployment rate during economic cycles."
     )
-    # st.write("Shows how job losses impact unemployment rates during recessions.")
 
     merged_df_dual = pd.merge(
         filtered_df_ces[["year_period", "value"]],

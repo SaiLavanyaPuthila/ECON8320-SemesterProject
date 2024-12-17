@@ -99,12 +99,8 @@ def plot_6():
         yaxis_title="Values",
         legend_title="Indicator",
     )
-    fig_bar.update_xaxes(
-        title_text="<b>Period</b>"
-    )
-    fig_bar.update_yaxes(
-        title_text="<b>Hours/Earnings</b>"
-    )
+    fig_bar.update_xaxes(title_text="<b>Period</b>")
+    fig_bar.update_yaxes(title_text="<b>Hours/Earnings</b>")
     st.plotly_chart(fig_bar, use_container_width=True)
 
 

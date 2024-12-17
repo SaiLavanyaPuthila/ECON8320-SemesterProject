@@ -64,8 +64,7 @@ def plot_10():
         "This chart analyzes the evolution of the Consumer Price Index for All Urban Consumers (CPI-U) across major categories like housing, transportation, food, and healthcare. It also compares these changes with hourly earnings as a reference. The insight helps to understand how cost of living adjustments relate to wage growth over time."
     )
 
-    # Assuming a generic CPI breakdown. You might need to adjust this based on the structure of your CPI data.
-    cpi_components = ["cpi_value"]  # Replace this if you have CPI component columns
+    cpi_components = ["cpi_value"]
 
     # Merging dataframes
     merged_df_bar = pd.merge(
@@ -110,12 +109,10 @@ def plot_10():
     )
     fig_bar.update_yaxes(title_text="<b>CPI-U Components</b>", secondary_y=False)
     fig_bar.update_yaxes(title_text="<b>Average Hourly Earnings</b>", secondary_y=True)
-    fig_bar.update_xaxes(
-        title_text="<b>Period</b>"
-    )
+    fig_bar.update_xaxes(title_text="<b>Period</b>")
 
     st.plotly_chart(fig_bar, use_container_width=True)
-    
+
 
 if __name__ == "__main__":
     plot_10()

@@ -42,7 +42,7 @@ def plot_7():
         df_laborforce["year"].max(),
     )
 
-     # Sidebar for year selection
+    # Sidebar for year selection
     st.sidebar.header("Filter data based on year for plot 5")
     selected_year = st.sidebar.slider(
         "Select Year Range",
@@ -52,7 +52,7 @@ def plot_7():
         step=1,
         key=7,
     )
-    
+
     filtered_df_earnings = filter_df(df_earnings, selected_year)
     filtered_df_employment = filter_df(df_employment, selected_year)
     filtered_df_laborforce = filter_df(df_laborforce, selected_year)
@@ -99,12 +99,8 @@ def plot_7():
         yaxis_title="Value",
         legend_title="Indicator",
     )
-    fig.update_xaxes(
-        title_text="<b>Period</b>"
-    )
-    fig.update_yaxes(
-        title_text="<b>Value</b>"
-    )
+    fig.update_xaxes(title_text="<b>Period</b>")
+    fig.update_yaxes(title_text="<b>Value</b>")
     st.plotly_chart(fig, use_container_width=True)
 
 
