@@ -93,16 +93,8 @@ def plot_1():
         }
     )
     pio.templates["google"] = go.layout.Template(
-        layout_colorway=[
-            "#FFD1DC",
-            "#F0E68C",
-            "#D3C7F3",
-            "#ADD8E6",
-            "#90EE90",
-            "#F8BBD0",
-            "#FFB347",
-            "#D8BFD8",
-        ]
+        layout_colorway=['#33CFFF', '#33FF57', '#FF33D4', '#FF5733', '#A633FF']
+
     )
 
     # setting Google color palette as default
