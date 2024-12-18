@@ -39,7 +39,7 @@ def plot_3():
     )
 
     # Sidebar for year selection
-    st.sidebar.header("Filter data based on year for plot 3")
+    st.sidebar.header("Filter data for plot 3")
     selected_year = st.sidebar.slider(
         "Select Year",
         min_value=int(min_year),
