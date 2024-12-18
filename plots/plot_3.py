@@ -15,7 +15,7 @@ def filter_df(df, selected_year):
     return df[(df["year"] >= selected_year[0]) & (df["year"] <= selected_year[1])]
 
 
-def plot_stacked_bar_chart():
+def plot_3():
     # Load the datasets
     df_unemployment = pd.read_csv("data/LNS13000000.csv")
     df_nonfarm = pd.read_csv("data/CES0000000001.csv")
@@ -39,7 +39,7 @@ def plot_stacked_bar_chart():
     )
 
     # Sidebar for year selection
-    st.sidebar.header("Filter Data by Year")
+    st.sidebar.header("Filter data based on year for plot 3")
     selected_year = st.sidebar.slider(
         "Select Year",
         min_value=int(min_year),
@@ -74,9 +74,9 @@ def plot_stacked_bar_chart():
     )
 
     # Create a stacked bar chart using Plotly
-    st.title("Economic Indicators: Stacked Bar Chart")
+    st.title("Labor Market Dynamics: Unemployment, Wage Growth, and Employment Trends Over Time")
     st.write(
-        "Visualize trends in Civilian Unemployment, Total Nonfarm Employment, and Average Hourly Earnings over time."
+        "This analysis explores key facets of the labor market – unemployment rates, wage growth patterns, and employment trends – over time. It provides a comprehensive view of the interconnectedness of these factors, revealing the dynamic shifts and pressures within the labor landscape and offering insights into the health and performance of the overall economy."
     )
 
     fig = px.bar(
@@ -90,11 +90,17 @@ def plot_stacked_bar_chart():
         labels={"value": "Value", "year_period": "Year/Period"},
         title="Stacked Bar Chart of Economic Indicators",
     )
-
+    fig.update_yaxes(
+        title_text="<b>Employment Numbers</b>", secondary_y=False
+    )
+    fig.update_xaxes(
+        title_text="<b>Period</b>"
+    )
+    fig.update_layout(
+        legend_title="Indicator",
+    )
     st.plotly_chart(fig, use_container_width=True)
 
 
-# if __name__ == "__main__":
-#     plot_stacked_bar_chart()
-
-plot_stacked_bar_chart()
+if __name__ == "__main__":
+    plot_3()

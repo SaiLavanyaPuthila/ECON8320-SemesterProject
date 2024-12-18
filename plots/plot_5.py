@@ -1,9 +1,13 @@
 import streamlit as st
 import pandas as pd
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+# from utils import prepare_df, filter_df
 import plotly.express as px
 
 
-# Prepare the dataframe for visualization
+# Sort and prepare each dataframe
 def prepare_df(df):
     df = df.sort_values(by=["year", "period"])
     df["year_period"] = df["year"].astype(str) + " " + df["periodName"]
@@ -17,88 +21,86 @@ def filter_df(df, selected_year):
 
 def plot_5():
     # Load the datasets
-    df_unemployment = pd.read_csv("data/LNS13000000.csv")
-    df_nonfarm = pd.read_csv("data/CES0000000001.csv")
-    df_hourly_earnings = pd.read_csv("data/CES0500000003.csv")
+    df_earnings = pd.read_csv("data/CES0500000003.csv")
+    df_employment = pd.read_csv("data/LNS12000000.csv")
+    df_laborforce = pd.read_csv("data/LNS11000000.csv")
 
-    # Prepare each dataframe
-    df_unemployment = prepare_df(df_unemployment)
-    df_nonfarm = prepare_df(df_nonfarm)
-    df_hourly_earnings = prepare_df(df_hourly_earnings)
+    # Prepare the dataframes
+    df_earnings = prepare_df(df_earnings)
+    df_employment = prepare_df(df_employment)
+    df_laborforce = prepare_df(df_laborforce)
 
-    # Find the common year range
+    # Find common year range
     min_year = max(
-        df_unemployment["year"].min(),
-        df_nonfarm["year"].min(),
-        df_hourly_earnings["year"].min(),
+        df_earnings["year"].min(),
+        df_employment["year"].min(),
+        df_laborforce["year"].min(),
     )
     max_year = min(
-        df_unemployment["year"].max(),
-        df_nonfarm["year"].max(),
-        df_hourly_earnings["year"].max(),
+        df_earnings["year"].max(),
+        df_employment["year"].max(),
+        df_laborforce["year"].max(),
     )
 
     # Sidebar for year selection
-    st.sidebar.header("Filter data based on year for plot 3")
+    st.sidebar.header("Filter data based on year for plot 5")
     selected_year = st.sidebar.slider(
-        "Select Year",
+        "Select Year Range",
         min_value=int(min_year),
         max_value=int(max_year),
         value=(int(min_year), int(max_year)),
         step=1,
+        key=7,
     )
 
-    # Filter dataframes based on the selected year range
-    filtered_unemployment = filter_df(df_unemployment, selected_year)
-    filtered_nonfarm = filter_df(df_nonfarm, selected_year)
-    filtered_hourly_earnings = filter_df(df_hourly_earnings, selected_year)
+    filtered_df_earnings = filter_df(df_earnings, selected_year)
+    filtered_df_employment = filter_df(df_employment, selected_year)
+    filtered_df_laborforce = filter_df(df_laborforce, selected_year)
 
-    # Merge the dataframes on 'year_period'
+    # Merge the dataframes
     merged_df = pd.merge(
-        filtered_unemployment[["year_period", "value"]],
-        filtered_nonfarm[["year_period", "value"]],
+        filtered_df_earnings[["year_period", "value"]],
+        filtered_df_employment[["year_period", "value"]],
         on="year_period",
-        suffixes=("_unemployment", "_nonfarm"),
+        suffixes=("_earnings", "_employment"),
     )
     merged_df = pd.merge(
         merged_df,
-        filtered_hourly_earnings[["year_period", "value"]],
+        filtered_df_laborforce[["year_period", "value"]],
         on="year_period",
     )
+    # Rename columns
     merged_df = merged_df.rename(
         columns={
-            "value_unemployment": "Civilian Unemployment",
-            "value_nonfarm": "Total Nonfarm Employment",
-            "value": "Average Hourly Earnings",
+            "value_earnings": "Average Hourly Earnings",
+            "value_employment": "Civilian Employment",
+            "value": "Civilian Labor Force",
         }
     )
-
-    # Create a stacked bar chart using Plotly
-    st.title("Labor Market Dynamics: Unemployment, Wage Growth, and Employment Trends Over Time")
+    # Stacked Area Chart
+    st.title("Wage Growth in Relation to Employment and Labor Force Participation")
     st.write(
-        "This analysis explores key facets of the labor market – unemployment rates, wage growth patterns, and employment trends – over time. It provides a comprehensive view of the interconnectedness of these factors, revealing the dynamic shifts and pressures within the labor landscape and offering insights into the health and performance of the overall economy."
+        "This analysis investigates the interplay between wage growth, employment levels, and labor force participation. It examines how these factors influence each other, revealing the dynamics of compensation within the labor market and providing insights into the relationship between workforce engagement and earnings trends."
     )
 
-    fig = px.bar(
+    fig = px.area(
         merged_df,
         x="year_period",
         y=[
-            "Civilian Unemployment",
-            "Total Nonfarm Employment",
             "Average Hourly Earnings",
+            "Civilian Employment",
+            "Civilian Labor Force",
         ],
-        labels={"value": "Value", "year_period": "Year/Period"},
-        title="Stacked Bar Chart of Economic Indicators",
-    )
-    fig.update_yaxes(
-        title_text="<b>Employment Numbers</b>", secondary_y=False
-    )
-    fig.update_xaxes(
-        title_text="<b>Period</b>"
+        title="Wage Growth vs. Employment and Labor Force Participation",
+        labels={"value": "Value"},
     )
     fig.update_layout(
+        xaxis_title="Year Period",
+        yaxis_title="Value",
         legend_title="Indicator",
     )
+    fig.update_xaxes(title_text="<b>Period</b>")
+    fig.update_yaxes(title_text="<b>Value</b>")
     st.plotly_chart(fig, use_container_width=True)
 
 

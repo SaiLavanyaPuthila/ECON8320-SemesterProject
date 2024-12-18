@@ -3,12 +3,12 @@ import pandas as pd
 import warnings
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-from plots.plot_1 import plot_1
-from plots.plot_2 import plot_2
-from plots.plot_5 import plot_5
-from plots.plot_6 import plot_6
-from plots.plot_7 import plot_7
-from plots.plot_10 import plot_10
+from plots.plot_2 import plot_1
+from plots.plot_1 import plot_2
+from plots.plot_3 import plot_5
+from plots.plot_4 import plot_6
+from plots.plot_5 import plot_7
+from plots.plot_6 import plot_10
 
 
 warnings.filterwarnings("ignore")
