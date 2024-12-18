@@ -69,9 +69,8 @@ To set up the project locally, follow these steps:
 
 ## Usage
 
-1. **Data Fetching**: Use `fetch_data.py` to retrieve the necessary datasets.
-2. **Data Processing**: Run `main.py` to process and analyze the data.
-3. **Visualization**: Launch `streamlit_dashboard.py` to interact with the visualized results.
+1. **Data Fetching**: Use `main.py` to retrieve the necessary datasets.
+2. **Visualization**: Launch `streamlit_dashboard.py` to process the data and interact with the visualized results.
 
 ## Dependencies
 
