@@ -130,7 +130,8 @@ year,period,periodName,latest,value,footnotes,series_id
 2014,M03,March,,236.293,[{}],CUUR0000SA0
 2014,M02,February,,234.781,[{}],CUUR0000SA0
 2014,M01,January,,233.916,[{}],CUUR0000SA0
-2024,M11,November,true,315.493,[{}],CUUR0000SA0
+2024,M12,December,,315.605,[{}],CUUR0000SA0
+2024,M11,November,,315.493,[{}],CUUR0000SA0
 2024,M10,October,,315.664,[{}],CUUR0000SA0
 2024,M09,September,,315.301,[{}],CUUR0000SA0
 2024,M08,August,,314.796,[{}],CUUR0000SA0

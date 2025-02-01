@@ -130,8 +130,9 @@ year,period,periodName,latest,value,footnotes,series_id
 2014,M03,March,,24.32,[{}],CES0500000003
 2014,M02,February,,24.33,[{}],CES0500000003
 2014,M01,January,,24.23,[{}],CES0500000003
-2024,M11,November,true,35.61,"[{'code': 'P', 'text': 'preliminary'}]",CES0500000003
-2024,M10,October,,35.48,"[{'code': 'P', 'text': 'preliminary'}]",CES0500000003
+2024,M12,December,true,35.69,"[{'code': 'P', 'text': 'preliminary'}]",CES0500000003
+2024,M11,November,,35.59,"[{'code': 'P', 'text': 'preliminary'}]",CES0500000003
+2024,M10,October,,35.46,[{}],CES0500000003
 2024,M09,September,,35.33,[{}],CES0500000003
 2024,M08,August,,35.22,[{}],CES0500000003
 2024,M07,July,,35.07,[{}],CES0500000003
