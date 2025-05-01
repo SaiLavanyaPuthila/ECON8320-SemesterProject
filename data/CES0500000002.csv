@@ -1,5 +1,5 @@
 year,period,periodName,latest,value,footnotes,series_id
-2024,M12,December,,34.2,"[{'code': 'P', 'text': 'preliminary'}]",CES0500000002
+2024,M12,December,,34.2,[{}],CES0500000002
 2024,M11,November,,34.3,[{}],CES0500000002
 2024,M10,October,,34.3,[{}],CES0500000002
 2024,M09,September,,34.2,[{}],CES0500000002
