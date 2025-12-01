@@ -1,0 +1,5 @@
+2025-12-01 02:39:06,680 - INFO - Starting API data fetch for series: ['LNS13000000', 'LNS12000000', 'CES0000000001', 'LNS14000000', 'CES0500000003', 'CES0500000002', 'LNS11000000', 'CUUR0000SA0'], from 2014 to 2024.
+2025-12-01 02:39:06,680 - INFO - Fetching data for years 2014 to 2024...
+2025-12-01 02:39:07,008 - DEBUG - API response for years 2014-2024: {'status': 'REQUEST_NOT_PROCESSED', 'responseTime': 0, 'message': ['The key:13bcdc9f4f604f0bacdd80ed16f2386f provided by the User is invalid. Please provide a proper key for the operation to be successful'], 'Results': {}}
+2025-12-01 02:39:07,008 - ERROR - Invalid JSON format. 'Results' and 'series' keys are missing.
+2025-12-01 02:39:07,008 - INFO - Completed API data fetching and CSV processing successfully.
